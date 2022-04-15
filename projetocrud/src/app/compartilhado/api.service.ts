@@ -18,20 +18,29 @@ export class ApiService {
 
   }
 
-  getCadastro(data : any){
-    return this.http.post<any>("http://localhost:3000/posts", data)
+  getCadastro(){
+    return this.http.get<any>("http://localhost:3000/posts")
     .pipe(map((res:any)=>{
       return res;
     }))
 
   }
 
-  updateCadastro(data : any){
-    return this.http.post<any>("http://localhost:3000/posts", data)
+  updateCadastro(data : any,id: number){
+    return this.http.put<any>("http://localhost:3000/posts",+ id,data)
     .pipe(map((res:any)=>{
       return res;
     }))
 
   }
+
+  deleteCadastro(id: number){
+    return this.http.delete<any>("http://localhost:3000/posts" + id )
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+
+  }
+
 }
 
