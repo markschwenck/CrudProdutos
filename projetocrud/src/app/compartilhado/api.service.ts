@@ -26,16 +26,16 @@ export class ApiService {
 
   }
 
-  updateCadastro(data : any,id: number){
-    return this.http.put<any>("http://localhost:3000/posts",+ id,data)
+  updateCadastro(data : any,produto: string){
+    return this.http.put<any>("http://localhost:3000/posts",+ produto,data)
     .pipe(map((res:any)=>{
       return res;
     }))
 
   }
 
-  deleteCadastro(id: number){
-    return this.http.delete<any>("http://localhost:3000/posts" + id )
+  deleteCadastro(produto: string){
+    return this.http.delete<any>("http://localhost:3000/posts" + produto )
     .pipe(map((res:any)=>{
       return res;
     }))
